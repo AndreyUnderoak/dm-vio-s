@@ -428,6 +428,8 @@ struct PointHessian
 	FrameHessian* host;
 	bool hasDepthPrior;
 
+	bool object_status = false;
+
 	float my_type;
 
 	float idepth_scaled;

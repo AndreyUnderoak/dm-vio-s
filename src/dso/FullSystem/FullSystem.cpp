@@ -1495,7 +1495,22 @@ void FullSystem::makeKeyFrame( FrameHessian* fh)
 
 	// =========================== add new Immature points & new residuals =========================
 	makeNewTraces(fh, 0);
-
+	// =========================== CHECK FOR OBJECT /////////////////////////
+	std::vector<int> px_c = rs->get_px();
+	int gap = 50;
+	if(px_c.size()>1){
+		// std::cout<<"START IN CHECKING OF P>>>>>>>>>>>>>>"<<std::endl;
+		for(ImmaturePoint* p : fh->immaturePoints)
+		{
+			// std::cout<<"<<<<<<<<<<<<<STEP IN CHECKING OF P>>>>>>>>>>>>>>"<<std::endl;
+			if(p->u>px_c.at(0)-gap && p->u<px_c.at(0)+gap && p->v>px_c.at(1)-gap && p->v<px_c.at(1)+gap){
+				// std::cout<<""<<p->u<<" "<<p->v<<std::endl;
+				p->object_status=true;
+			}
+		}
+	}
+	
+	// =========================== CHECK FOR OBJECT END //////////////////////
 
 
     dmvio::TimeMeasurement timeMeasurementPublish("publishInMakeKeyframe");

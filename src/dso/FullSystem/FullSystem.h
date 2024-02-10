@@ -44,6 +44,9 @@
 #include "IMU/IMUIntegration.hpp"
 #include "util/GTData.hpp"
 
+#include "FullSystem/SemanticReceiver.h"
+
+
 #include <math.h>
 #include "IMUInitialization/GravityInitializer.h"
 
@@ -330,6 +333,10 @@ private:
 	std::deque<FrameHessian*> unmappedTrackedFrames;
 	int needNewKFAfter;	// Otherwise, a new KF is *needed that has ID bigger than [needNewKFAfter]*.
 	boost::thread mappingThread;
+
+	SemanticReceiver* rs = nullptr;
+	boost::thread reseiverThread;
+
 	bool runMapping;
 	bool needToKetchupMapping;
 

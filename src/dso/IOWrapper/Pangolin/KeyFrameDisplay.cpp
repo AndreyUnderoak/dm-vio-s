@@ -132,6 +132,7 @@ void KeyFrameDisplay::setFromKF(FrameHessian* fh, CalibHessian* HCalib)
 		pc[numSparsePoints].relObsBaseline = 0;
 		pc[numSparsePoints].numGoodRes = 1;
 		pc[numSparsePoints].status = 0;
+		pc[numSparsePoints].object_status=p->object_status;
 		numSparsePoints++;
 	}
 
@@ -264,7 +265,7 @@ bool KeyFrameDisplay::refreshPC(bool canRefresh, float scaledTH, float absTH, in
 
 
 
-			if(my_displayMode==0)
+			if(my_displayMode!=0)
 			{
 				if(originalInputSparse[i].status==0)
 				{
@@ -295,6 +296,12 @@ bool KeyFrameDisplay::refreshPC(bool canRefresh, float scaledTH, float absTH, in
 					tmpColorBuffer[vertexBufferNumPoints][0] = 255;
 					tmpColorBuffer[vertexBufferNumPoints][1] = 255;
 					tmpColorBuffer[vertexBufferNumPoints][2] = 255;
+				}
+				if(originalInputSparse[i].object_status)
+				{
+					tmpColorBuffer[vertexBufferNumPoints][0] = 255;
+					tmpColorBuffer[vertexBufferNumPoints][1] = 0;
+					tmpColorBuffer[vertexBufferNumPoints][2] = 0;
 				}
 
 			}

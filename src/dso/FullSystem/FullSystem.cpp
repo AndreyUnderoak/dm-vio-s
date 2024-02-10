@@ -178,7 +178,8 @@ FullSystem::FullSystem(bool linearizeOperationPassed, const dmvio::IMUCalibratio
 	mappingThread = boost::thread(&FullSystem::mappingLoop, this);
 	lastRefStopID=0;
 
-
+	rs = new SemanticReceiver(8080,1);
+	reseiverThread = boost::thread(&SemanticReceiver::run, rs);
 
 	minIdJetVisDebug = -1;
 	maxIdJetVisDebug = -1;

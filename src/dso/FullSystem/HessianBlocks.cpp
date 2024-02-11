@@ -45,6 +45,7 @@ PointHessian::PointHessian(const ImmaturePoint* const rawPoint, CalibHessian* Hc
 	// set static values & initialization.
 	u = rawPoint->u;
 	v = rawPoint->v;
+	object_status = rawPoint->object_status;
 	assert(std::isfinite(rawPoint->idepth_max));
 	//idepth_init = rawPoint->idepth_GT;
 

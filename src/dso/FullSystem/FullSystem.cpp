@@ -1498,7 +1498,7 @@ void FullSystem::makeKeyFrame( FrameHessian* fh)
 	makeNewTraces(fh, 0);
 	// =========================== CHECK FOR OBJECT /////////////////////////
 	std::vector<int> px_c = rs->get_px();
-	int gap = 50;
+	int gap = 15;
 	if(px_c.size()>1){
 		// std::cout<<"START IN CHECKING OF P>>>>>>>>>>>>>>"<<std::endl;
 		for(ImmaturePoint* p : fh->immaturePoints)

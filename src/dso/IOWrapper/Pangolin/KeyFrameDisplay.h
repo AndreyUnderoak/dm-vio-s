@@ -55,7 +55,7 @@ struct InputPointSparse
 	unsigned char color[ppp];
 	unsigned char status;
 
-	bool object_status = false;
+	int object_status = 0;
 };
 
 struct MyVertex

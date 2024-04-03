@@ -299,11 +299,11 @@ bool KeyFrameDisplay::refreshPC(bool canRefresh, float scaledTH, float absTH, in
 					tmpColorBuffer[vertexBufferNumPoints][1] = 110;
 					tmpColorBuffer[vertexBufferNumPoints][2] = 110;
 				}
-				if(originalInputSparse[i].object_status)
+				if(originalInputSparse[i].object_status!=0)
 				{
-					tmpColorBuffer[vertexBufferNumPoints][0] = 255;
-					tmpColorBuffer[vertexBufferNumPoints][1] = 0;
-					tmpColorBuffer[vertexBufferNumPoints][2] = 0;
+					tmpColorBuffer[vertexBufferNumPoints][0] = object_color[originalInputSparse[i].object_status][0];
+					tmpColorBuffer[vertexBufferNumPoints][1] = object_color[originalInputSparse[i].object_status][1];
+					tmpColorBuffer[vertexBufferNumPoints][2] = object_color[originalInputSparse[i].object_status][2];
 				}
 
 			}

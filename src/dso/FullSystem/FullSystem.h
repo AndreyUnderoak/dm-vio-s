@@ -45,6 +45,7 @@
 #include "util/GTData.hpp"
 
 #include "FullSystem/SemanticReceiver.h"
+#include "FullSystem/SemanticObject.h"
 
 
 #include <math.h>

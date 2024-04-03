@@ -428,7 +428,7 @@ struct PointHessian
 	FrameHessian* host;
 	bool hasDepthPrior;
 
-	bool object_status = false;
+	int object_status = 0;
 
 	float my_type;
 

@@ -77,6 +77,7 @@ set(dso_SOURCE_FILES
         ${DSO_SOURCE_DIR}/FullSystem/ImmaturePoint.cpp
         ${DSO_SOURCE_DIR}/FullSystem/HessianBlocks.cpp
         ${DSO_SOURCE_DIR}/FullSystem/PixelSelector2.cpp
+	${DSO_SOURCE_DIR}/FullSystem/SemanticObject.cpp
 		${DSO_SOURCE_DIR}/FullSystem/SemanticReceiver.cpp
 		${DSO_SOURCE_DIR}/OptimizationBackend/EnergyFunctional.cpp
 		${DSO_SOURCE_DIR}/OptimizationBackend/AccumulatedTopHessian.cpp

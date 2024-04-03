@@ -72,7 +72,7 @@ public:
 	FrameHessian* host;
 	int idxInImmaturePoints;
 
-	bool object_status = false;
+	int object_status = 0;
 
 	float quality;
 
